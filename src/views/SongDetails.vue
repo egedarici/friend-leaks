@@ -1,8 +1,15 @@
-<script setup  lang="ts">
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import SongService from '@/services/songService'
 
-const song = ref(null)
+type Song = {
+    id: number,
+    title: string,
+    artist: string,
+    album: string,
+};
+
+const song = ref<Song>({id: 0, title: '', artist: '', album: ''})
 
 const props = defineProps({
     id: {

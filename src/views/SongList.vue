@@ -11,7 +11,14 @@ import SongCard from '@/components/SongCard.vue';
 import songService from '@/services/songService';
 import { ref, onMounted } from 'vue';
 
-const songs = ref(null);
+type Song = {
+  id: number,
+  title: string,
+  artist: string,
+  album: string,
+  };
+
+const songs = ref<Song[]>([]);
 
 onMounted(() => {
   songService.getSongs()
