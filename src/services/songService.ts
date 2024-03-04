@@ -10,8 +10,8 @@ const apiClient = axios.create({
 })
 
 export default {
-  getSongs() {
-    return apiClient.get('/songs')
+  getSongs(perPage, page) {
+    return apiClient.get('/songs?_limit=' + perPage + '&_page=' + page)
   },
   getSong(id) {
     return apiClient.get(`/songs/${id}`)

@@ -9,7 +9,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'song-list',
-      component: SongList
+      component: SongList,
+      props: route => ({ page: parseInt(route.query.page as string) || 1})
     },
     {
       path: '/about',
